@@ -1,0 +1,6 @@
+CS,G12345, Alice Johnson, 3
+CS,G15552, Mark Li, 1
+Nursing,G22222, Emily Stone, 2
+Business,G19999, Robert Miles, 4
+CS,G88888, Sarah Young, 1
+Nursing,G30001, Jake Farmer, 4
