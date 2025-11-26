@@ -68,10 +68,20 @@ void retrieveByStudentG(Table &aTable)
          << endl;
 }
 
-void getHeight(Table& aTable) {
+void getHeight(Table &aTable)
+{
 
-    aTable.getHeight();
+    cout << "Current size: " << aTable.getSizeOf() << endl;
+    cout << "Current height: " << aTable.getHeight() << endl;
 
+    if (aTable.getHeight() > 2 * log2(aTable.getSizeOf()))
+    {
+        cout << "Tree is unbalanced... " << endl;
+    }
+    else
+    {
+        cout << "Tree is balanced!" << endl;
+    }
 }
 
 int main()
@@ -116,7 +126,7 @@ int main()
         case 5:
             cout << aTable;
             break;
-        
+
         case 6:
             getHeight(aTable);
             break;

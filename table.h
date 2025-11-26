@@ -16,8 +16,8 @@ public:
     void remove(const char *gNumber, Student &aStudent);
     void removeByG(const char *gNumber, Student &aStudent);
     void retrieveByG(const char *gNumber, retrieval &r);
-    int getHeight() ;
-
+    int getHeight();
+    int getSizeOf() const;
 
     const Table &operator=(const Table &aTable);
     friend ostream &operator<<(ostream &out, const Table &aTable);
@@ -57,8 +57,8 @@ private:
     void saveToFile(ostream &out, Node *currRoot) const;
     int numericGValue(const char *gNumber);
     void retrieveByG(Node *&currRoot, const char *gNumber, retrieval &r);
-    int getHeight(Node*& currRoot);
-
+    int getHeight(Node *&currRoot);
+    int getSize() const { return size; }
 };
 
 #endif

@@ -3,24 +3,22 @@
 Student::Student() : programName(nullptr),
                      gNumber(nullptr),
                      studentName(nullptr),
-                     academicStanding(0), 
-                     size(0)
+                     academicStanding(0)
+
 {
 }
 Student::Student(const char *programName,
                  const char *gNumber,
                  const char *studentName,
-                 int academicStanding,
-                 int size)
+                 int academicStanding)
 {
 
-    init(programName, gNumber, studentName, academicStanding, size);
+    init(programName, gNumber, studentName, academicStanding);
 }
 void Student::init(const char *programName,
                    const char *gNumber,
                    const char *studentName,
-                   int academicStanding,
-                   int size)
+                   int academicStanding)
 {
     this->programName = new char[strlen(programName) + 1];
     strcpy(this->programName, programName);
@@ -29,14 +27,13 @@ void Student::init(const char *programName,
     this->studentName = new char[strlen(studentName) + 1];
     strcpy(this->studentName, studentName);
     this->academicStanding = academicStanding;
-    this->size = size;
 }
 
 Student::Student(const Student &aStudent) : programName(nullptr),
                                             gNumber(nullptr),
                                             studentName(nullptr),
-                                            academicStanding(0),
-                                            size(0)
+                                            academicStanding(0)
+
 {
     *this = aStudent;
 }
@@ -89,7 +86,6 @@ void Student::setStudentName(const char *studentName)
     strcpy(this->studentName, studentName);
 }
 void Student::setAcademicStanding(int academicStanding) { this->academicStanding = academicStanding; }
-void Student::setSize(int size) { this->size = size; }
 const char *Student::getProgramName() const { return programName; }
 const char *Student::getGNumber() const { return gNumber; }
 const char *Student::getStudentName() const { return studentName; }
@@ -106,7 +102,6 @@ const Student &Student::operator=(const Student &aStudent)
     setGNumber(aStudent.gNumber);
     setStudentName(aStudent.studentName);
     setAcademicStanding(aStudent.academicStanding);
-    setSize(aStudent.size);
     return *this;
 }
 

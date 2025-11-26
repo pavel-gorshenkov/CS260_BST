@@ -40,16 +40,13 @@ void Table::add(Node *&currRoot, const Student &aStudent)
     int currNum = numericGValue(currRoot->data.getGNumber());
     int newNum = numericGValue(aStudent.getGNumber());
 
-    cout << "comparing" << aStudent.getGNumber() << newNum << currRoot->data.getGNumber() << currNum;
 
     if (newNum < currNum)
     {
-        cout << "going left" << endl;
         add(currRoot->left, aStudent);
     }
     else
     {
-        cout << "going right" << endl;
         add(currRoot->right, aStudent);
     }
 }
@@ -372,20 +369,27 @@ void Table::retrieveByG(Node *&currRoot, const char *gNumber, retrieval &r)
     }
 }
 
-int Table::getHeight()  {
-    
+int Table::getHeight()
+{
+
     return getHeight(root);
 }
 
-int Table::getHeight(Node*& currRoot) {
+int Table::getHeight(Node *&currRoot)
+{
 
-    if (!currRoot) {
+    if (!currRoot)
+    {
         return 0;
     }
 
-int leftHeight = getHeight(currRoot->left);
-int rightHeight = getHeight(currRoot->right);
+    int leftHeight = getHeight(currRoot->left);
+    int rightHeight = getHeight(currRoot->right);
 
-return 1 + max(leftHeight, rightHeight); // recursive height calculation
+    return 1 + max(leftHeight, rightHeight); // recursive height calculation
+}
 
+int Table::getSizeOf() const
+{
+    return getSize();
 }

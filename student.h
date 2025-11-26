@@ -16,8 +16,7 @@ public:
     Student(const char *programName,
             const char *gNumber,
             const char *studentName,
-            int academicStanding,
-            int size);
+            int academicStanding);
     Student(const Student &aStudent);
     ~Student(); // destructor
 
@@ -25,13 +24,11 @@ public:
     void setGNumber(const char *gNumber);
     void setStudentName(const char *studentName);
     void setAcademicStanding(int academicStanding);
-    void setSize(int size);
 
     const char *getProgramName() const; // getters
     const char *getGNumber() const;
     const char *getStudentName() const;
     int getStanding() const;
-    int getSize() const;
 
     const Student &operator=(const Student &aStudent);
     friend ostream &operator<<(ostream &out, const Student &aStudent);
@@ -41,13 +38,11 @@ private:
     char *gNumber;
     char *studentName;
     int academicStanding;
-    int size;
 
     void init(const char *programName,
               const char *gNumber,
               const char *studentName,
-              int academicStanding,
-              int size);
+              int academicStanding);
 };
 
 bool operator<(const Student &student1, const Student &student2);
